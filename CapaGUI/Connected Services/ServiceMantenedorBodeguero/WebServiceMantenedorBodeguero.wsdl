@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webGuardarTransaccionBodeguero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bod" type="tns:bodeguero" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="bodeguero">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_bodeguero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_bodeguero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido_bodeguero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero_bodeguero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Correo_bodeguero" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Telefono_bodeguero" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webGuardarTransaccionBodegueroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webActualizarBodeguero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bodeguero" type="tns:bodeguero" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webActualizarBodegueroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webEliminarBodeguero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut_bodeguero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarBodegueroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webPosicionBodeguero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPosicionBodegueroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webPosicionBodegueroResult" type="tns:bodeguero" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webConsultaBodeguero">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultaBodegueroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webConsultaBodegueroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webGuardarTransaccionBodegueroSoapIn">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionBodeguero" />
+  </wsdl:message>
+  <wsdl:message name="webGuardarTransaccionBodegueroSoapOut">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionBodegueroResponse" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarBodegueroSoapIn">
+    <wsdl:part name="parameters" element="tns:webActualizarBodeguero" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarBodegueroSoapOut">
+    <wsdl:part name="parameters" element="tns:webActualizarBodegueroResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarBodegueroSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarBodeguero" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarBodegueroSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarBodegueroResponse" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionBodegueroSoapIn">
+    <wsdl:part name="parameters" element="tns:webPosicionBodeguero" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionBodegueroSoapOut">
+    <wsdl:part name="parameters" element="tns:webPosicionBodegueroResponse" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaBodegueroSoapIn">
+    <wsdl:part name="parameters" element="tns:webConsultaBodeguero" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaBodegueroSoapOut">
+    <wsdl:part name="parameters" element="tns:webConsultaBodegueroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMantenedorBodegueroSoap">
+    <wsdl:operation name="webGuardarTransaccionBodeguero">
+      <wsdl:input message="tns:webGuardarTransaccionBodegueroSoapIn" />
+      <wsdl:output message="tns:webGuardarTransaccionBodegueroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodeguero">
+      <wsdl:input message="tns:webActualizarBodegueroSoapIn" />
+      <wsdl:output message="tns:webActualizarBodegueroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodeguero">
+      <wsdl:input message="tns:webEliminarBodegueroSoapIn" />
+      <wsdl:output message="tns:webEliminarBodegueroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodeguero">
+      <wsdl:input message="tns:webPosicionBodegueroSoapIn" />
+      <wsdl:output message="tns:webPosicionBodegueroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodeguero">
+      <wsdl:input message="tns:webConsultaBodegueroSoapIn" />
+      <wsdl:output message="tns:webConsultaBodegueroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMantenedorBodegueroSoap" type="tns:WebServiceMantenedorBodegueroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionBodeguero">
+      <soap:operation soapAction="http://tempuri.org/webGuardarTransaccionBodeguero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodeguero">
+      <soap:operation soapAction="http://tempuri.org/webActualizarBodeguero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodeguero">
+      <soap:operation soapAction="http://tempuri.org/webEliminarBodeguero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodeguero">
+      <soap:operation soapAction="http://tempuri.org/webPosicionBodeguero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodeguero">
+      <soap:operation soapAction="http://tempuri.org/webConsultaBodeguero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMantenedorBodegueroSoap12" type="tns:WebServiceMantenedorBodegueroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionBodeguero">
+      <soap12:operation soapAction="http://tempuri.org/webGuardarTransaccionBodeguero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodeguero">
+      <soap12:operation soapAction="http://tempuri.org/webActualizarBodeguero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodeguero">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarBodeguero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodeguero">
+      <soap12:operation soapAction="http://tempuri.org/webPosicionBodeguero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodeguero">
+      <soap12:operation soapAction="http://tempuri.org/webConsultaBodeguero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMantenedorBodeguero">
+    <wsdl:port name="WebServiceMantenedorBodegueroSoap" binding="tns:WebServiceMantenedorBodegueroSoap">
+      <soap:address location="https://localhost:44314/WebServiceMantenedorBodeguero.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMantenedorBodegueroSoap12" binding="tns:WebServiceMantenedorBodegueroSoap12">
+      <soap12:address location="https://localhost:44314/WebServiceMantenedorBodeguero.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

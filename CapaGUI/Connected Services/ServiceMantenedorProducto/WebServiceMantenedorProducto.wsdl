@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WebGuardarTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registro" type="tns:productos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="productos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cod_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom_producto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_ingreso" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_prov" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio_unitario" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Especificaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo_bodega" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_bodeguero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebGuardarTransaccionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebConsultaProductos">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebConsultaProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebConsultaProductosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebListaProducto">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebListaProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebListaProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebEliminarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebEliminarProductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebActualizarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:productos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebActualizarProductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebPosicionProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebPosicionProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebPosicionProductoResult" type="tns:productos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebEntradaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registro" type="tns:productos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebEntradaProductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebSalidaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registro" type="tns:productos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebSalidaProductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="tns:login" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="login">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WebGuardarTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:WebGuardarTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="WebGuardarTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:WebGuardarTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebConsultaProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:WebConsultaProductos" />
+  </wsdl:message>
+  <wsdl:message name="WebConsultaProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:WebConsultaProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebListaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebListaProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebListaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebListaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebEliminarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebEliminarProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebEliminarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebEliminarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebActualizarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebActualizarProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebActualizarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebActualizarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebPosicionProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebPosicionProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebPosicionProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebPosicionProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebEntradaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebEntradaProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebEntradaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebEntradaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebSalidaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebSalidaProducto" />
+  </wsdl:message>
+  <wsdl:message name="WebSalidaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebSalidaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:WebLogin" />
+  </wsdl:message>
+  <wsdl:message name="WebLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:WebLoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMantenedorProductoSoap">
+    <wsdl:operation name="WebGuardarTransaccion">
+      <wsdl:input message="tns:WebGuardarTransaccionSoapIn" />
+      <wsdl:output message="tns:WebGuardarTransaccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebConsultaProductos">
+      <wsdl:input message="tns:WebConsultaProductosSoapIn" />
+      <wsdl:output message="tns:WebConsultaProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebListaProducto">
+      <wsdl:input message="tns:WebListaProductoSoapIn" />
+      <wsdl:output message="tns:WebListaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebEliminarProducto">
+      <wsdl:input message="tns:WebEliminarProductoSoapIn" />
+      <wsdl:output message="tns:WebEliminarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebActualizarProducto">
+      <wsdl:input message="tns:WebActualizarProductoSoapIn" />
+      <wsdl:output message="tns:WebActualizarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebPosicionProducto">
+      <wsdl:input message="tns:WebPosicionProductoSoapIn" />
+      <wsdl:output message="tns:WebPosicionProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebEntradaProducto">
+      <wsdl:input message="tns:WebEntradaProductoSoapIn" />
+      <wsdl:output message="tns:WebEntradaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebSalidaProducto">
+      <wsdl:input message="tns:WebSalidaProductoSoapIn" />
+      <wsdl:output message="tns:WebSalidaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebLogin">
+      <wsdl:input message="tns:WebLoginSoapIn" />
+      <wsdl:output message="tns:WebLoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMantenedorProductoSoap" type="tns:WebServiceMantenedorProductoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebGuardarTransaccion">
+      <soap:operation soapAction="http://tempuri.org/WebGuardarTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebConsultaProductos">
+      <soap:operation soapAction="http://tempuri.org/WebConsultaProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebListaProducto">
+      <soap:operation soapAction="http://tempuri.org/WebListaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebEliminarProducto">
+      <soap:operation soapAction="http://tempuri.org/WebEliminarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebActualizarProducto">
+      <soap:operation soapAction="http://tempuri.org/WebActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebPosicionProducto">
+      <soap:operation soapAction="http://tempuri.org/WebPosicionProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebEntradaProducto">
+      <soap:operation soapAction="http://tempuri.org/WebEntradaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebSalidaProducto">
+      <soap:operation soapAction="http://tempuri.org/WebSalidaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebLogin">
+      <soap:operation soapAction="http://tempuri.org/WebLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMantenedorProductoSoap12" type="tns:WebServiceMantenedorProductoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebGuardarTransaccion">
+      <soap12:operation soapAction="http://tempuri.org/WebGuardarTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebConsultaProductos">
+      <soap12:operation soapAction="http://tempuri.org/WebConsultaProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebListaProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebListaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebEliminarProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebEliminarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebActualizarProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebPosicionProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebPosicionProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebEntradaProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebEntradaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebSalidaProducto">
+      <soap12:operation soapAction="http://tempuri.org/WebSalidaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebLogin">
+      <soap12:operation soapAction="http://tempuri.org/WebLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMantenedorProducto">
+    <wsdl:port name="WebServiceMantenedorProductoSoap" binding="tns:WebServiceMantenedorProductoSoap">
+      <soap:address location="https://localhost:44314/WebServiceMantenedorProducto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMantenedorProductoSoap12" binding="tns:WebServiceMantenedorProductoSoap12">
+      <soap12:address location="https://localhost:44314/WebServiceMantenedorProducto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

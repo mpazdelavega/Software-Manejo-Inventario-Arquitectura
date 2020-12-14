@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webGuardarTransaccionProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prov" type="tns:proveedor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="proveedor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_prov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_prov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comuna_prov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ciudad_prov" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_prov" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion_prov" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webGuardarTransaccionProveedorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webActualizarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prov" type="tns:proveedor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webActualizarProveedorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webEliminarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut_prov" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarProveedorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultaProveedor">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultaProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webConsultaProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPosicionProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPosicionProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webPosicionProveedorResult" type="tns:proveedor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webGuardarTransaccionProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionProveedor" />
+  </wsdl:message>
+  <wsdl:message name="webGuardarTransaccionProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:webActualizarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:webActualizarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:webConsultaProveedor" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:webConsultaProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:webPosicionProveedor" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:webPosicionProveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMantenedorProveedorSoap">
+    <wsdl:operation name="webGuardarTransaccionProveedor">
+      <wsdl:input message="tns:webGuardarTransaccionProveedorSoapIn" />
+      <wsdl:output message="tns:webGuardarTransaccionProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarProveedor">
+      <wsdl:input message="tns:webActualizarProveedorSoapIn" />
+      <wsdl:output message="tns:webActualizarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarProveedor">
+      <wsdl:input message="tns:webEliminarProveedorSoapIn" />
+      <wsdl:output message="tns:webEliminarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaProveedor">
+      <wsdl:input message="tns:webConsultaProveedorSoapIn" />
+      <wsdl:output message="tns:webConsultaProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionProveedor">
+      <wsdl:input message="tns:webPosicionProveedorSoapIn" />
+      <wsdl:output message="tns:webPosicionProveedorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMantenedorProveedorSoap" type="tns:WebServiceMantenedorProveedorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionProveedor">
+      <soap:operation soapAction="http://tempuri.org/webGuardarTransaccionProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarProveedor">
+      <soap:operation soapAction="http://tempuri.org/webActualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarProveedor">
+      <soap:operation soapAction="http://tempuri.org/webEliminarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaProveedor">
+      <soap:operation soapAction="http://tempuri.org/webConsultaProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionProveedor">
+      <soap:operation soapAction="http://tempuri.org/webPosicionProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMantenedorProveedorSoap12" type="tns:WebServiceMantenedorProveedorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionProveedor">
+      <soap12:operation soapAction="http://tempuri.org/webGuardarTransaccionProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/webActualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaProveedor">
+      <soap12:operation soapAction="http://tempuri.org/webConsultaProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionProveedor">
+      <soap12:operation soapAction="http://tempuri.org/webPosicionProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMantenedorProveedor">
+    <wsdl:port name="WebServiceMantenedorProveedorSoap" binding="tns:WebServiceMantenedorProveedorSoap">
+      <soap:address location="https://localhost:44314/WebServiceMantenedorProveedor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMantenedorProveedorSoap12" binding="tns:WebServiceMantenedorProveedorSoap12">
+      <soap12:address location="https://localhost:44314/WebServiceMantenedorProveedor.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F82B800-05C6-4A73-8A16-F3BA42B00705}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaGUI</RootNamespace>
+    <AssemblyName>CapaGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceMantenedorProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceMantenedorProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceMantenedorBodega\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceMantenedorBodeguero\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaEntradaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaEntradaProductos.Designer.cs">
+      <DependentUpon>PantallaEntradaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaListarBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaListarBodega.Designer.cs">
+      <DependentUpon>PantallaListarBodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaListarBodeguero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaListarBodeguero.Designer.cs">
+      <DependentUpon>PantallaListarBodeguero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaListarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaListarProducto.Designer.cs">
+      <DependentUpon>PantallaListarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaListarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaListarProveedor.Designer.cs">
+      <DependentUpon>PantallaListarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorBodega.Designer.cs">
+      <DependentUpon>PantallaMantenedorBodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorBodeguero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorBodeguero.Designer.cs">
+      <DependentUpon>PantallaMantenedorBodeguero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorProducto.Designer.cs">
+      <DependentUpon>PantallaMantenedorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorProveedor.Designer.cs">
+      <DependentUpon>PantallaMantenedorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMenu.Designer.cs">
+      <DependentUpon>PantallaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaLogin.Designer.cs">
+      <DependentUpon>PantallaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaSalidaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaSalidaProductos.Designer.cs">
+      <DependentUpon>PantallaSalidaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaEntradaProductos.resx">
+      <DependentUpon>PantallaEntradaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaListarBodega.resx">
+      <DependentUpon>PantallaListarBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaListarBodeguero.resx">
+      <DependentUpon>PantallaListarBodeguero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaListarProducto.resx">
+      <DependentUpon>PantallaListarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaListarProveedor.resx">
+      <DependentUpon>PantallaListarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorBodega.resx">
+      <DependentUpon>PantallaMantenedorBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorBodeguero.resx">
+      <DependentUpon>PantallaMantenedorBodeguero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorProducto.resx">
+      <DependentUpon>PantallaMantenedorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorProveedor.resx">
+      <DependentUpon>PantallaMantenedorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMenu.resx">
+      <DependentUpon>PantallaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaLogin.resx">
+      <DependentUpon>PantallaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaSalidaProductos.resx">
+      <DependentUpon>PantallaSalidaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\ServiceMantenedorBodega\CapaGUI.ServiceMantenedorBodega.bodega.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceMantenedorBodeguero\CapaGUI.ServiceMantenedorBodeguero.bodeguero.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceMantenedorProducto\CapaGUI.ServiceMantenedorProducto.productos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceMantenedorProducto\WebServiceMantenedorProducto.wsdl" />
+    <None Include="Connected Services\ServiceMantenedorProveedor\CapaGUI.ServiceMantenedorProveedor.proveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceMantenedorProveedor\WebServiceMantenedorProveedor.wsdl" />
+    <None Include="Connected Services\ServiceMantenedorBodega\WebServiceMantenedorBodega.wsdl" />
+    <None Include="Connected Services\ServiceMantenedorBodeguero\WebServiceMantenedorBodeguero.wsdl" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
+      <Project>{ce2dddb9-e1fd-43d4-90cf-29c98f46249e}</Project>
+      <Name>CapaConexion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
+      <Project>{95d7de4a-163b-4b5e-93a4-9ff44ed1f9b8}</Project>
+      <Name>CapaDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{9c3c7f66-595b-4b9b-917b-77d93ce4eb60}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceMantenedorProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceMantenedorProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceMantenedorBodega\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceMantenedorBodeguero\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProducto\WebServiceMantenedorProducto.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProducto\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProducto\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProveedor\WebServiceMantenedorProveedor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProveedor\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProveedor\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodega\WebServiceMantenedorBodega.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodega\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodega\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodega\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodeguero\WebServiceMantenedorBodeguero.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodeguero\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodeguero\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorBodeguero\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

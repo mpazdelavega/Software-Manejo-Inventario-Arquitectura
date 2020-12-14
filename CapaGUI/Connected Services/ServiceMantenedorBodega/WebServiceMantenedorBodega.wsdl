@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webGuardarTransaccionBodega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bod" type="tns:bodega" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="bodega">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo_bodega" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_bodega" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webGuardarTransaccionBodegaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webActualizarBodega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bodega" type="tns:bodega" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webActualizarBodegaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webEliminarBodega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo_bodega" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarBodegaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultaBodega">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultaBodegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webConsultaBodegaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPosicionBodega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPosicionBodegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webPosicionBodegaResult" type="tns:bodega" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webGuardarTransaccionBodegaSoapIn">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionBodega" />
+  </wsdl:message>
+  <wsdl:message name="webGuardarTransaccionBodegaSoapOut">
+    <wsdl:part name="parameters" element="tns:webGuardarTransaccionBodegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarBodegaSoapIn">
+    <wsdl:part name="parameters" element="tns:webActualizarBodega" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarBodegaSoapOut">
+    <wsdl:part name="parameters" element="tns:webActualizarBodegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarBodegaSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarBodega" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarBodegaSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarBodegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaBodegaSoapIn">
+    <wsdl:part name="parameters" element="tns:webConsultaBodega" />
+  </wsdl:message>
+  <wsdl:message name="webConsultaBodegaSoapOut">
+    <wsdl:part name="parameters" element="tns:webConsultaBodegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionBodegaSoapIn">
+    <wsdl:part name="parameters" element="tns:webPosicionBodega" />
+  </wsdl:message>
+  <wsdl:message name="webPosicionBodegaSoapOut">
+    <wsdl:part name="parameters" element="tns:webPosicionBodegaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMantenedorBodegaSoap">
+    <wsdl:operation name="webGuardarTransaccionBodega">
+      <wsdl:input message="tns:webGuardarTransaccionBodegaSoapIn" />
+      <wsdl:output message="tns:webGuardarTransaccionBodegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodega">
+      <wsdl:input message="tns:webActualizarBodegaSoapIn" />
+      <wsdl:output message="tns:webActualizarBodegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodega">
+      <wsdl:input message="tns:webEliminarBodegaSoapIn" />
+      <wsdl:output message="tns:webEliminarBodegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodega">
+      <wsdl:input message="tns:webConsultaBodegaSoapIn" />
+      <wsdl:output message="tns:webConsultaBodegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodega">
+      <wsdl:input message="tns:webPosicionBodegaSoapIn" />
+      <wsdl:output message="tns:webPosicionBodegaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMantenedorBodegaSoap" type="tns:WebServiceMantenedorBodegaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionBodega">
+      <soap:operation soapAction="http://tempuri.org/webGuardarTransaccionBodega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodega">
+      <soap:operation soapAction="http://tempuri.org/webActualizarBodega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodega">
+      <soap:operation soapAction="http://tempuri.org/webEliminarBodega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodega">
+      <soap:operation soapAction="http://tempuri.org/webConsultaBodega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodega">
+      <soap:operation soapAction="http://tempuri.org/webPosicionBodega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMantenedorBodegaSoap12" type="tns:WebServiceMantenedorBodegaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webGuardarTransaccionBodega">
+      <soap12:operation soapAction="http://tempuri.org/webGuardarTransaccionBodega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarBodega">
+      <soap12:operation soapAction="http://tempuri.org/webActualizarBodega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarBodega">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarBodega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultaBodega">
+      <soap12:operation soapAction="http://tempuri.org/webConsultaBodega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPosicionBodega">
+      <soap12:operation soapAction="http://tempuri.org/webPosicionBodega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMantenedorBodega">
+    <wsdl:port name="WebServiceMantenedorBodegaSoap" binding="tns:WebServiceMantenedorBodegaSoap">
+      <soap:address location="https://localhost:44314/WebServiceMantenedorBodega.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMantenedorBodegaSoap12" binding="tns:WebServiceMantenedorBodegaSoap12">
+      <soap12:address location="https://localhost:44314/WebServiceMantenedorBodega.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
